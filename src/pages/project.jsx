@@ -1,7 +1,7 @@
-function Projects() {
+function Project() {
     return (  
         <div>Projects</div>
     );
 }
 
-export default Projects;
+export default Project;

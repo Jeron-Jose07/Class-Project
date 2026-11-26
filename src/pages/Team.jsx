@@ -1,6 +1,6 @@
 function Team () {
     return (
-        Team 
+        <div>Team</div>
       );
 }
 

@@ -1,6 +1,6 @@
 function Settings() {
     return (
-        Settings
+        <div>Settings</div>
       );
 }
 
