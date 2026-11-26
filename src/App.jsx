@@ -4,6 +4,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/login'
 import Projects from './pages/project'
 import Tasks from './pages/tasks'
+import Calender from './pages/Calender'
+import Clients from './pages/Clients'
+import Dashboard from './pages/Dashboard'
+import Settings from './pages/Settings'
+import Team from './pages/Team'
 
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
@@ -34,10 +39,13 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Login />} />
-
         <Route path="/projects" element={<Projects />} />
-
         <Route path="/tasks" element={<Tasks />} />
+        <Route path="/Calender" element={<Calender />} />
+        <Route path="/Clients" element={<Clients />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/Settings" element={<Settings />} />
+        <Route path="/Team" element={<Team />} />
 
       </Routes>
 
