@@ -1,55 +1,83 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Login from "./pages/login";
-import Projects from "./pages/project";
-import Tasks from "./pages/tasks";
-import Team from "./pages/Team";
-import Settings from "./pages/settings";
-import Dashboard from "./pages/Dashboard";
-import Clients from "./pages/Clients";
-import Calender from "./pages/Calender";
-import Register from "./pages/register";
+import Login from './pages/login'
+import Projects from './pages/project'
+import Tasks from './pages/tasks'
+import Team from './pages/team'
+import Settings from './pages/settings'
+import Dashboard from './pages/Dashboard'
+import Clients from './pages/Clients'
+import Calender from './pages/Calender'
+import Register from './pages/register'
 
-import Admin from "./pages/Admin/adminlayout";
-import Admindashboard from "./pages/Admin/dashboard";
-import Adminsettings from "./pages/Admin/settings";
-import Userdetails from "./pages/Admin/userDetails";
-
-import "./App.css";
+import './App.css'
+import Admin from './pages/Admin/adminlayout'
+import UserDetails from './pages/Admin/userDetails'
+import AdminDashboard from './pages/Admin/dashboard'
+import AdminSettings from './pages/Admin/settings'
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
+  const [count, setCount] = useState(0)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  
+  const handlesubmit=(event)=>{
+    event.preventDefault();
+    console.log(email,password)
+  } 
 
-        <Route path="/" element={<Login />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/tasks" element={<Tasks />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/clients" element={<Clients />} />
-        <Route path="/calender" element={<Calender />} />
-        <Route path="/register" element={<Register />} />
-
-        <Route path="/admin" element={<Admin />}>
-          <Route
-            path="admindashboard"
-            element={<Admindashboard />}
-          />
-          <Route
-            path="settings"
-            element={<Adminsettings />}
-          />
-          <Route
-            path="userdetails"
-            element={<Userdetails />}
-          />
-        </Route>
-
-      </Routes>
-    </BrowserRouter>
-  );
+  function print(){
+  console.log("Printing statements")
+  console.log(email,password)
 }
 
-export default App;
+  return (
+    <>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/project" element={<Projects />} />
+      <Route path="/tasks" element={<Tasks/>} />
+      <Route path="/team" element={<Team/>}/>
+      <Route path="/settings" element={<Settings/>} />
+      <Route path="/Dashboard" element={<Dashboard/>}/>
+      <Route path="/Clients" element={<Clients/>}/>
+      <Route path="/calender" element={<Calender/>}/>
+      <Route path="/register" element={<Register/>}/>
+
+      <Route path="/adminlayout" element={<Admin/>}>
+        <Route path="admindashboard" element={<AdminDashboard/>}/>
+        <Route path="adminsettings" element={<AdminSettings/>}/>
+        <Route path="userdetails" element={<UserDetails/>}/>
+      </Route>
+        </Routes>
+        </BrowserRouter>
+    {/*
+      <>
+    <div className="text-blue-500">HI</div>
+    <div className="email">Email</div>
+    <input type="email" required placeholder="Enter your email" value={email} onChange={(e)=> setEmail(e.target.value)} /><br/><br/>
+    <div className="password">Password</div>
+    <input type="password" required placeholder="Enter your password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
+    <button type="submit" onClick={()=>console.log(email,password)}>Submit</button><br/><br/>
+    <button type="submit" onClick={()=>print()}>Submit</button>
+    
+
+    <form action="" onSubmit={handlesubmit}>
+       <input type="email" required placeholder="Enter your email" value={email} onChange={(e)=> setEmail(e.target.value)} /><br/><br/>
+    
+    <input type="password" required placeholder="Enter your password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
+    
+    <button type="submit">Submit</button>
+    </form>
+
+ 
+
+  </>
+  */} 
+    </>
+  )
+}
+
+export default App

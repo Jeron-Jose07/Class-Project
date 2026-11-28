@@ -3,8 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 function Login() {
 
-    const navigate = useNavigate();
-    const location = useLocation();
+    //const navigate = useNavigate();
+    //const location = useLocation();
 
     const [logindata, setFormdata] = useState({
         username: "",
